@@ -1,15 +1,11 @@
+import React from "react";
 
-import React from 'react'
-
-const items = (props) => {
+const items = (foodItem) => {
   return (
     <div>
-        <li key ={props.foodItem}
-       className="list-group-item">
-        {props.foodItem}
-      </li> 
+      <li className="list-group-item">{foodItem}</li>
     </div>
-  )
-}
+  );
+};
 
-export default items
+export default items;

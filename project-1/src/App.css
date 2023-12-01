@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: bisque;
+  background-color: rgb(121, 80, 129);
   border-radius: 9px;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #d0c7c7;
 }
 .button{
     min-width: 80px;

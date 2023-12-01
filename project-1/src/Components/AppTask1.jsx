@@ -2,7 +2,7 @@ import React from "react";
 
 const AppTask = () => {
 
-  let todoName = 'Learning javaScropt';
+  let todoName = 'Learning React';
   let todoDate = '08/05/2002'
   return (
     <div>
