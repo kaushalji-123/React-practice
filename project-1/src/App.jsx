@@ -1,21 +1,33 @@
+import AppName from "./components/AppName";
+import AddTodo from "./components/AddTodo";
+import TodoItems from "./components/TodoItems";
 import "./App.css";
-import AppInput from "./Components/AppInput";
-import AppName from "./Components/AppName";
-import AppTask from "./Components/AppTask";
-import AppTask1 from "./Components/AppTask1";
-
-
+import { useState } from "react";
 
 function App() {
-  return (
-    <center >
-      <AppName></AppName>
-      <AppInput></AppInput>
-      <div className="taskContainer">
-      <AppTask ></AppTask>
-      <AppTask1 ></AppTask1>
+  const [todoItems, setTodoItems] = useState([]);
 
-      </div>
+  const handleNewItem = (itemName, itemDueDate) => {
+    setTodoItems((currValue) => [
+      ...currValue,
+      { name: itemName, dueDate: itemDueDate },
+    ]);
+  };
+
+  const handleDeleteItem = (todoItemName) => {
+    const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
+    setTodoItems(newTodoItems);
+  };
+
+  return (
+    <center className="todo-container">
+      <AppName />
+      <AddTodo onNewItem={handleNewItem} />
+      {todoItems.length === 0 && <WelcomeMessage></WelcomeMessage>}
+      <TodoItems
+        todoItems={todoItems}
+        onDeleteClick={handleDeleteItem}
+      ></TodoItems>
     </center>
   );
 }

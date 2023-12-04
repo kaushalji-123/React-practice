@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AppInput = () => {
+const AddTodo = () => {
   return (
     <div className="container text-center ">
     <div className="row dkrow">
@@ -20,4 +20,4 @@ const AppInput = () => {
   )
 }
 
-export default AppInput
+export default AddTodo
