@@ -1,6 +1,4 @@
 import Display from './components/Display'
-import Fetch from './components/Fetch'
-
 
 import styles from './App.module.css'
 import ButtonsContainer from './components/ButtonsContainer'
