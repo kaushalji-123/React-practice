@@ -1,35 +1,64 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
+const phrases = [
+  "No 🙉",
+  "Are you sure?",
+  "Really Sure😢",
+  "I'll be very sad😕",
+  "Pookie Please🥺",
+  "Don't do this to me🫤",
+  "I'm gonna cry..😭",
+  "You are breaking my heart😭💔",
+]
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [noCount, setNoCount] = useState(0);
+  const [yesPressed, setYesPressed] = useState(false);
+  const yesButtonSize = noCount * 20 + 16;
+
+  
+  function handleYesClick() {
+    setYesPressed(true)
+  }
+  function handleNoClick() {
+    setNoCount(noCount+1);
+  }
+
+  function getNoButtonText() {
+    return phrases[Math.min(noCount, phrases.length - 1)];
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className='valentine-container'>
+      {yesPressed ? (
+        <>
+          <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="bear-Kissing" />
+          <div className='text'>Yayyy !!!</div>
+        </>
+      ) : (
+        <>
+          <img className='kiss' src="https://media1.tenor.com/m/al4a1pG1f8YAAAAC/jump-bear.gif" alt="bear with heart" />
+          <div className='text'>Will you be my valentine 🌹?</div>
+          <div className='both-Button'>
+            <button className='yesButton'
+            style={{ fontSize: yesButtonSize , backgroundColor:'rgb(248, 229, 89)'}}
+              onClick={handleYesClick}
+            >
+              Yes 🙈
+            </button>
+            <button
+              className='NoButton'
+              style={{ }}
+              onClick={handleNoClick}
+            >
+              {getNoButtonText()}
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;

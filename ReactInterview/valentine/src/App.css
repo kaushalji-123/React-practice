@@ -4,7 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
-
+.valentine-container{
+  background-color: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -36,7 +38,22 @@
 .card {
   padding: 2em;
 }
-
+.kiss{
+  height: 80%;
+  width: 80%;
+  border-radius: 60%;
+}
+.both-Button{
+  margin: 10px;
+  gap:10px
+}
 .read-the-docs {
   color: #888;
+}
+.text{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  color: yellow;
+  font-weight: 500;
+  margin: 10px;
 }
